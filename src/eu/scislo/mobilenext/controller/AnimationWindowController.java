@@ -9,6 +9,8 @@ import javafx.scene.shape.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.util.Random;
+
 public class AnimationWindowController {
 
     private Stage animationWindowStage;
@@ -76,9 +78,19 @@ public class AnimationWindowController {
             animation = translateTransition;
         } else if (animationNo == 3) {
             Path path = new Path();
-            MoveTo moveTo = new MoveTo(0, 50);
-            CubicCurveTo sineCurve = new CubicCurveTo(200, -250, 200, 250, 400, 0);
-            path.getElements().addAll(moveTo, sineCurve);
+            MoveTo moveTo = new MoveTo(this.rect1.getWidth()/2,this.rect1.getHeight()/2);
+
+            LineTo lineTo = new LineTo();
+            lineTo.setX(100);
+            lineTo.setY(this.rect1.getHeight()/2);
+
+            Random generator = new Random();
+            int i1 = generator.nextInt(400);
+            int i2 = generator.nextInt(400) - 400;
+
+            CubicCurveTo sineCurve = new CubicCurveTo(200, i1, 200, i2, 400, 0);
+
+            path.getElements().addAll(moveTo, lineTo, sineCurve);
 
 
             PathTransition pathTransition = new PathTransition();
@@ -86,6 +98,8 @@ public class AnimationWindowController {
             pathTransition.setDuration(Duration.seconds(10));
             pathTransition.setPath(path);
             pathTransition.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
+            pathTransition.setCycleCount(Animation.INDEFINITE);
+            pathTransition.setAutoReverse(true);
             animation = pathTransition;
         } else if (animationNo == 4) {
 
