@@ -13,7 +13,7 @@
       <Button layoutX="93.0" layoutY="14.0" mnemonicParsing="false" onAction="#pause" text="Pause" />
       <Button layoutX="168.0" layoutY="14.0" mnemonicParsing="false" onAction="#stop" text="Stop" />
       <Button layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeWindow" text="Close" />
-      <Rectangle fx:id="rect1" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="29.0" layoutY="107.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
+      <Rectangle fx:id="rect1" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="2.0" layoutY="139.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -23,7 +23,7 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Rectangle fx:id="rect2" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="29.0" layoutY="296.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
+      <Rectangle fx:id="rect2" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="2.0" layoutY="342.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>

@@ -36,9 +36,7 @@ public class MainWindowController {
         int row = (int) (evt.getY() / 150);
         int num = col + 1 + row * 3;
         System.out.println(num);
-        if (num == 1) {
-            this.showAnimationWindow(num);
-        }
+        this.showAnimationWindow(num);
     }
 
     public void showAnimationWindow(int num) {
