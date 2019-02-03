@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="29.0" layoutY="14.0" mnemonicParsing="false" text="Play" />
+      <Button layoutX="93.0" layoutY="14.0" mnemonicParsing="false" text="Pause" />
+      <Button layoutX="168.0" layoutY="14.0" mnemonicParsing="false" text="Stop" />
+      <Button layoutX="240.0" layoutY="14.0" mnemonicParsing="false" text="Close" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="29.0" layoutY="107.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#eb03d4" />
+                  <Stop color="#ff0404" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="29.0" layoutY="296.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#05ebca" />
+                  <Stop color="#d78c00" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Circle fill="#1f93ff00" layoutX="316.0" layoutY="250.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" visible="false" />
+   </children>
+</AnchorPane>
