@@ -16,7 +16,7 @@ public class Animations extends Application {
         primaryStage.setTitle("Animations");
         MainWindowController mainWindowController = fxmlLoader.getController();
         mainWindowController.setMain(this);
-        mainWindowController.setPrimaryState(primaryStage);
+        mainWindowController.setPrimaryStage(primaryStage);
         primaryStage.setMinWidth(500);
         primaryStage.setMinHeight(500);
         primaryStage.setScene(new Scene(pane, 500, 500));

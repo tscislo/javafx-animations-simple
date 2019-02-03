@@ -9,11 +9,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.scislo.mobilenext.controller.AnimationWindowController">
    <children>
-      <Button layoutX="29.0" layoutY="14.0" mnemonicParsing="false" text="Play" />
-      <Button layoutX="93.0" layoutY="14.0" mnemonicParsing="false" text="Pause" />
-      <Button layoutX="168.0" layoutY="14.0" mnemonicParsing="false" text="Stop" />
-      <Button layoutX="240.0" layoutY="14.0" mnemonicParsing="false" text="Close" />
-      <Rectangle fx:id="rec1" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="29.0" layoutY="107.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
+      <Button layoutX="29.0" layoutY="14.0" mnemonicParsing="false" onAction="#play" text="Play" />
+      <Button layoutX="93.0" layoutY="14.0" mnemonicParsing="false" onAction="#pause" text="Pause" />
+      <Button layoutX="168.0" layoutY="14.0" mnemonicParsing="false" onAction="#stop" text="Stop" />
+      <Button layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeWindow" text="Close" />
+      <Rectangle fx:id="rect1" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="29.0" layoutY="107.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -23,7 +23,7 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Rectangle fx:id="rec2" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="29.0" layoutY="296.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
+      <Rectangle fx:id="rect2" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="29.0" layoutY="296.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -33,6 +33,6 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Circle fill="#1f93ff00" layoutX="316.0" layoutY="250.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" visible="false" />
+      <Circle fx:id="circle" fill="#1f93ff00" layoutX="316.0" layoutY="250.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" visible="false" />
    </children>
 </AnchorPane>
