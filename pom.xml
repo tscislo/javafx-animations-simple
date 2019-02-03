@@ -24,7 +24,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>eu.scislo.mobilenext.Animations</mainClass>
+                            <mainClass>Animations</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
