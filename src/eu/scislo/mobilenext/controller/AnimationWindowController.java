@@ -5,6 +5,8 @@ import javafx.animation.PathTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.shape.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -18,13 +20,16 @@ public class AnimationWindowController {
     private Animation animation;
 
     @FXML
-    Rectangle rect1;
-
-    @FXML
-    Rectangle rect2;
+    Rectangle rect;
 
     @FXML
     Circle circle;
+
+    @FXML
+    ImageView background;
+
+    @FXML
+    HBox fish;
 
 
     public void setAnimationWindowStage(Stage animationWindowStage) {
@@ -58,9 +63,16 @@ public class AnimationWindowController {
     }
 
     private void prepareAnimation() {
+        if (animationNo == 8) {
+            this.rect.setVisible(false);
+            this.background.setVisible(true);
+        } else {
+            this.rect.setVisible(true);
+            this.background.setVisible(false);
+        }
         if (animationNo == 1) {
             RotateTransition transition = new RotateTransition();
-            transition.setNode(this.rect1);
+            transition.setNode(this.rect);
             transition.setDuration(Duration.seconds(10));
             transition.setFromAngle(0);
             transition.setToAngle(360);
@@ -68,7 +80,7 @@ public class AnimationWindowController {
             animation = transition;
         } else if (animationNo == 2) {
             TranslateTransition translateTransition = new TranslateTransition();
-            translateTransition.setNode(this.rect1);
+            translateTransition.setNode(this.rect);
             translateTransition.setDuration(Duration.seconds(10));
             translateTransition.setFromX(0);
             translateTransition.setFromY(0);
@@ -78,11 +90,11 @@ public class AnimationWindowController {
             animation = translateTransition;
         } else if (animationNo == 3) {
             Path path = new Path();
-            MoveTo moveTo = new MoveTo(this.rect1.getWidth()/2,this.rect1.getHeight()/2);
+            MoveTo moveTo = new MoveTo(this.rect.getWidth() / 2, this.rect.getHeight() / 2);
 
             LineTo lineTo = new LineTo();
             lineTo.setX(100);
-            lineTo.setY(this.rect1.getHeight()/2);
+            lineTo.setY(this.rect.getHeight() / 2);
 
             Random generator = new Random();
             int i1 = generator.nextInt(400);
@@ -94,15 +106,46 @@ public class AnimationWindowController {
 
 
             PathTransition pathTransition = new PathTransition();
-            pathTransition.setNode(rect1);
+            pathTransition.setNode(rect);
             pathTransition.setDuration(Duration.seconds(10));
             pathTransition.setPath(path);
             pathTransition.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
             pathTransition.setCycleCount(Animation.INDEFINITE);
             pathTransition.setAutoReverse(true);
             animation = pathTransition;
-        } else if (animationNo == 4) {
+        } else if (animationNo == 8) {
 
+            int width = 75;
+            int height = 25;
+
+            Path path = new Path();
+            MoveTo moveTo = new MoveTo(width, height);
+
+            LineTo lineTo = new LineTo();
+            lineTo.setX(80);
+            lineTo.setY(height);
+
+            Random generator = new Random();
+            int i1 = generator.nextInt(400);
+            int i2 = generator.nextInt(400) - 400;
+
+            CubicCurveTo sineCurve = new CubicCurveTo(200, i1, 200, i2, 400, 0);
+
+            CubicCurveTo sineCurveBack = new CubicCurveTo(200, i1, 200, i2, width, 0);
+
+            LineTo lineToBack = new LineTo();
+            lineToBack.setX(79);
+            lineToBack.setY(0);
+
+            path.getElements().addAll(moveTo, lineTo, sineCurve, sineCurveBack, lineToBack);
+
+            PathTransition pathTransition = new PathTransition();
+            pathTransition.setNode(this.fish);
+            pathTransition.setDuration(Duration.seconds(10));
+            pathTransition.setPath(path);
+            pathTransition.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
+            pathTransition.setCycleCount(Animation.INDEFINITE);
+            animation = pathTransition;
         }
     }
 
